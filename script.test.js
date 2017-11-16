@@ -6,14 +6,14 @@ import {
     functionalMapNumbersIntoStrings,
     printType,
     isPalindrome,
-    functionalIsPalindrome,
+    Person,
     printOutPersonAge
 
 } from './script.js';
 
 describe('generateRandomNumber',() =>{
-    var rgb = generateRandomNumber();        
-    it('The values r,g,b should be lesser or equals to 255 and greater or equals to 0', () =>{
+    let rgb = generateRandomNumber();        
+    it('the values r,g,b should be lesser or equals to 255 and greater or equals to 0', () =>{
         expect(rgb.r).toBeLessThanOrEqual(255);
         expect(rgb.g).toBeLessThanOrEqual(255);
         expect(rgb.b).toBeLessThanOrEqual(255);
@@ -31,24 +31,130 @@ describe('generateRandomNumber',() =>{
 });
 
 describe('filterNegativeNumbers',()=> {
-    var array = [-4,8,-20,32,0];
-    var filter = filterNegativeNumbers(array);
-    var functionalFilter = functionalFilterNegativeNumbers(array);
-    it('Return is not null',() =>{
-        expect(filter).not.toBeNull();
-        expect(functionalFilter).not.toBeNull();
+    let array = [-4,8,-20,32,0];
+    let expectedArray = [8,32,0];
+    let filterArray = filterNegativeNumbers(array);
+    let functionalFilterArray = functionalFilterNegativeNumbers(array);
+    it('return is not null',() =>{
+        expect(filterArray).not.toBeNull();
+        expect(functionalFilterArray).not.toBeNull();
     });
-    it('The function returns always positive numbers',() =>{
-        for(var i = 0; i < filter.length; i++){
-            expect(filter[i]).toBeGreaterThanOrEqual(0);
+    it('the function returns always positive numbers',() =>{
+        for(let i = 0; i < filterArray.length; i++){
+            expect(filterArray[i]).toBeGreaterThanOrEqual(0);
         }
-        for(var j = 0; j < functionalFilter.length; j++){
-            expect(functionalFilter[j]).toBeGreaterThanOrEqual(0);
+        for(let j = 0; j < functionalFilterArray.length; j++){
+            expect(functionalFilterArray[j]).toBeGreaterThanOrEqual(0);
         } 
     })
-    it('The function returns an array',() =>{
-        expect(Array.isArray(filter)).toBeTruthy();
-        expect(Array.isArray(functionalFilter)).toBeTruthy();
+    it('the function returns the correct value', () =>{
+        for(let i = 0; i < filterArray.length; i++){
+            expect(filterArray).toEqual(expectedArray);
+        }
+        for(let j = 0; j < functionalFilterArray.length; j++){
+            expect(functionalFilterArray).toEqual(expectedArray);
+        } 
+    })
+    it('the function returns an array',() =>{
+        expect(Array.isArray(filterArray)).toBeTruthy();
+        expect(Array.isArray(functionalFilterArray)).toBeTruthy();
     })
 })
+
+describe('mapNumbersIntoStrings',()=> {
+    let array = [-4,8,-20,32,0];
+    let expectedArray = ['-4','8','-20','32','0']
+    let filterArray = mapNumbersIntoStrings(array);
+    let functionalFilterArray = mapNumbersIntoStrings(array);
+    it('return is not null',() =>{
+        expect(filterArray).not.toBeNull();
+        expect(functionalFilterArray).not.toBeNull();
+    });
+    it('the function returns strings',() =>{
+        for(let i = 0; i < filterArray.length; i++){
+            expect(typeof filterArray[i]).toEqual('string');
+        }
+        for(let j = 0; j < functionalFilterArray.length; j++){
+            expect(typeof functionalFilterArray[j]).toEqual('string');
+        } 
+    })
+    it('the function returns an array',() =>{
+        expect(Array.isArray(filterArray)).toBeTruthy();
+        expect(Array.isArray(functionalFilterArray)).toBeTruthy();
+    })
+    it('the function returns the correct value', () =>{
+        for(let i = 0; i < filterArray.length; i++){
+            expect(filterArray).toEqual(expectedArray);
+        }
+        for(let j = 0; j < functionalFilterArray.length; j++){
+            expect(functionalFilterArray).toEqual(expectedArray);
+        } 
+    })
+})
+
+describe('printType', () => {
+    global.console = {
+        log : jest.fn()
+    }
+    it('the function returns a string',() =>{
+        printType('Hi');
+        expect(global.console.log).toHaveBeenCalledWith('string');
+    })
+    jest.resetAllMocks();
+    it('the function returns a number',() =>{
+        printType(1);
+        expect(global.console.log).toHaveBeenCalledWith('number');
+    })
+    jest.resetAllMocks();    
+    it('the function returns a object',() =>{
+        printType({});
+        expect(global.console.log).toHaveBeenCalledWith('object');
+    })
+})
+
+describe('isPalindrome',() =>{
+    let result = isPalindrome('madam');
+    it('the function returns a boolean',() =>{
+        expect(typeof result).toEqual('boolean');
+    })
+    it('the function returns true',() =>{
+        expect(result).toBeTruthy();
+    })
+})
+
+describe('Person', () =>{
+    let personObj = new Person('Alejandro',20);
+    global.console = {
+        log : jest.fn()
+    }
+    it('the function should returns an object',() =>{
+        personObj.printName();
+        expect(global.console.log).toBeCalledWith('object');
+    })
+    it('the function returns the instance how its supposed',() =>{
+        expect(personObj).toMatchObject({
+            name : 'Alejandro',
+            age : 20
+        })
+    })
+})
+
+describe('printOutPersonAge', () => {
+    let personObj = new Person('Alejandro',20);
+    global.console = {
+        log : jest.fn()
+    }
+    it('the function was called with Alejandro', () =>{
+        printOutPersonAge(personObj);
+        expect(global.console.log).toBeCalledWith('Alejandro');
+    })
+})
+
+
+
+
+
+
+
+
 

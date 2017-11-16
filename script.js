@@ -60,7 +60,7 @@ export function functionalIsPalindrome(string){
         return false;
 }
 
-class Person {
+export class Person {
     constructor(name, age) {
       this.name = name;
       this.age = age;
