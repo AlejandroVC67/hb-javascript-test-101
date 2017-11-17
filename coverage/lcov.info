@@ -15,7 +15,7 @@ FN:63,(anonymous_11)
 FN:68,printOutPersonAge
 FNF:13
 FNH:13
-FNDA:1,generateRandomNumber
+FNDA:2,generateRandomNumber
 FNDA:1,filterNegativeNumbers
 FNDA:1,functionalFilterNegativeNumbers
 FNDA:5,(anonymous_3)
@@ -28,8 +28,8 @@ FNDA:2,(anonymous_9)
 FNDA:1,(anonymous_10)
 FNDA:1,(anonymous_11)
 FNDA:1,printOutPersonAge
-DA:2,1
-DA:7,1
+DA:2,2
+DA:7,2
 DA:11,1
 DA:12,1
 DA:13,5

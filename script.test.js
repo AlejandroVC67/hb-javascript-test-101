@@ -12,14 +12,15 @@ import {
 } from './script.js';
 
 describe('generateRandomNumber',() =>{
+    let {r,g,b} = generateRandomNumber();  
     let rgb = generateRandomNumber();        
     it('the values r,g,b should be lesser or equals to 255 and greater or equals to 0', () =>{
-        expect(rgb.r).toBeLessThanOrEqual(255);
-        expect(rgb.g).toBeLessThanOrEqual(255);
-        expect(rgb.b).toBeLessThanOrEqual(255);
-        expect(rgb.r).toBeGreaterThanOrEqual(0);
-        expect(rgb.g).toBeGreaterThanOrEqual(0);
-        expect(rgb.b).toBeGreaterThanOrEqual(0);
+        expect(r).toBeLessThanOrEqual(255);
+        expect(g).toBeLessThanOrEqual(255);
+        expect(b).toBeLessThanOrEqual(255);
+        expect(r).toBeGreaterThanOrEqual(0);
+        expect(g).toBeGreaterThanOrEqual(0);
+        expect(b).toBeGreaterThanOrEqual(0);
     });
     it('the function generates 3 values',() =>{
         expect(rgb).toMatchObject(expect.objectContaining({
