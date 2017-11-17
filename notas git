@@ -1,0 +1,6 @@
+git checkout master => con este me muevo entre branches
+con git fetch => me dice si hay cambios nuevos y cuales son
+git checkout -B [nombre branch] => creo un branch nuevo
+git branch => me dice en que branch estoy
+git branch -a => me dice todos los branches que hay
+git diff => me dice los cambios que se hicieron entre commits
