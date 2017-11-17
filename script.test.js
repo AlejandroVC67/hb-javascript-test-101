@@ -65,7 +65,7 @@ describe('mapNumbersIntoStrings',()=> {
     let array = [-4,8,-20,32,0];
     let expectedArray = ['-4','8','-20','32','0']
     let filterArray = mapNumbersIntoStrings(array);
-    let functionalFilterArray = mapNumbersIntoStrings(array);
+    let functionalFilterArray = functionalMapNumbersIntoStrings(array);
     it('return is not null',() =>{
         expect(filterArray).not.toBeNull();
         expect(functionalFilterArray).not.toBeNull();
@@ -114,11 +114,15 @@ describe('printType', () => {
 
 describe('isPalindrome',() =>{
     let result = isPalindrome('madam');
+    let falseResult = isPalindrome('Hi');
     it('the function returns a boolean',() =>{
         expect(typeof result).toEqual('boolean');
     })
     it('the function returns true',() =>{
         expect(result).toBeTruthy();
+    })
+    it('the function returns false',() =>{
+        expect(falseResult).not.toBeTruthy();
     })
 })
 
