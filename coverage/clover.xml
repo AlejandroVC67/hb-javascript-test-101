@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1510947811299" clover="3.2.0">
-  <project timestamp="1510947811299" name="All files">
+<coverage generated="1510949522785" clover="3.2.0">
+  <project timestamp="1510949522785" name="All files">
     <metrics statements="27" coveredstatements="27" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13" elements="44" coveredelements="44" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1">
       <file name="script.js" path="/Users/bootcamp/Desktop/hb-javascript-test-101/script.js">
         <metrics statements="27" coveredstatements="27" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="5" type="cond" truecount="2" falsecount="0"/>
