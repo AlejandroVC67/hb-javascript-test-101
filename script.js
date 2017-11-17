@@ -52,14 +52,6 @@ export function isPalindrome(string){
     }
 }
 
-export function functionalIsPalindrome(string){
-    var reverseString = string.split('').reverse().join('');
-    if(reverseString === string)
-        return true;
-    else   
-        return false;
-}
-
 export class Person {
     constructor(name, age) {
       this.name = name;
